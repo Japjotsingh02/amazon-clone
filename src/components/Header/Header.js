@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import { Link } from 'react-router-dom';
 
 // Components
-import { SearchBar, Wrapper, Content, NavBar, LogoImg  } from './Header.style';
+import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
+import { SearchBar, Wrapper, Content, NavBar, LogoImg, SignOutButton  } from './Header.style';
 import { useStateValue } from '../../StateProvider';
 import { auth } from '../../firebase';
 
 const Header=() =>{
     const [{basket,user},dispatch]=useStateValue();
+    const [signOut, setSignOut] = useState(false);
 
     const Currentuser = auth.currentUser;
-    console.log(Currentuser);
+    // console.log(Currentuser);
 
     if(user !==null){
         const displayName=user.displayName;
-        console.log(displayName);
     }
 
     const handleAuthentication = () => {
@@ -26,6 +27,20 @@ const Header=() =>{
             auth.signOut();
         }
     }
+
+    const signOutEnter = () =>{
+        if(user){
+            setSignOut(true);
+        }
+    }
+
+    const signOutPopup = () =>{
+        if(user){
+            setSignOut(false);
+        }
+    }
+
+    // console.log(signOut);
 
     return (
         <Wrapper>
@@ -37,12 +52,19 @@ const Header=() =>{
                     <input type="text"/>
                     <SearchIcon className="search-icon"/>
                 </SearchBar>
-
                 <NavBar>
+                    {/* <ArrowDropUpIcon className="triangle-image"/> */}
                     <Link to={`/SignIn`}>
-                        <div className="nav-flex" onClick={handleAuthentication}>
-                            <div className="top-nav">Hello {user ? "Sign out" : "Sign In"}</div>
+                        <div className="nav-flex" onMouseLeave={signOutPopup} onMouseEnter={signOutEnter}>
+                            <div className="top-nav">Hello {user ? user.displayName : "Sign In"}</div>
                             <div>Accounts & Lists</div>
+                            {signOut ? 
+                                <div className="sign-out-popup" onClick={handleAuthentication}>
+                                    <ArrowDropUpIcon alt="triangle" className="triangle-image"/>
+                                    {/* <img src="http://127.0.0.1:5500/images/product-tour/triangle.svg" /> */}
+                                    <SignOutButton>Sign-out</SignOutButton>
+                                </div>
+                            : ""}
                         </div>
                     </Link>
                     <div className="nav-flex">
@@ -59,8 +81,9 @@ const Header=() =>{
                         <span className="no-of-products">{basket && basket.length}</span>
                         <span  className="cart-text">Cart</span>
                     </div>
-                    </Link>              
+                    </Link>    
                 </NavBar>
+                {signOut ? <div className="sign-out-container"></div> : "" }
             </Content>
         </Wrapper>
     )

@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import { Form, LogoImg, SubmitButton, Wrapper } from '../SignIn/Sign-logIn.style';
 import { Link } from 'react-router-dom';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword ,updateProfile } from "firebase/auth";
 import { auth } from '../../firebase';
 import validator from "validator";
 
@@ -48,9 +48,9 @@ const LogIn = () => {
             default:
                 break;
         }
-        setemailError(EmailError,validateForm);
-        setpasswordError(PasswordError,validateForm);
-        setmessage(Message,validateForm);
+        setemailError(EmailError);
+        setpasswordError(PasswordError);
+        setmessage(Message);
     };  
 
     useEffect(() => {
@@ -73,6 +73,18 @@ const LogIn = () => {
             })
             .catch((error) => alert(error.message));
 
+        updateProfile(auth.currentUser, {
+            displayName: name
+        }).then(() => {
+            const displayName = auth.currentUser.displayName;
+            console.log(displayName);
+            // Profile updated!
+            // ...
+        }).catch((error) => { 
+            console.log(error);
+            // An error occurred
+            // ...    
+        });
     };
 
     return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { useStateValue } from '../../StateProvider';
 import Subtotal from '../Subtotal/Subtotal';
 import { Content, Wrapper, Title,Item,ItemImage,ItemDesc } from './CartLeft.style'

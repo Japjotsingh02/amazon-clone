@@ -3,12 +3,11 @@ import { Wrapper, GuaranteeImage,BuyCard } from './CartRight.style'
 import CheckCircleRoundedIcon from '@material-ui/icons/CheckCircleRounded';
 import { useStateValue } from '../../StateProvider';
 import Subtotal from '../Subtotal/Subtotal';
-
+import { useHistory } from 'react-router';
 
 const CartRight = () => {
+    const history = useHistory()
     const [{OrderChecked},dispatch] =useStateValue();
-
-    // console.log(OrderChecked);
     
     const changeChecked= () =>{
         dispatch({
@@ -16,7 +15,7 @@ const CartRight = () => {
             Checked:!OrderChecked,
             })
     }
-            
+
     // const [checked , setChecked] = useState(false);
     // console.log(checked);
 
@@ -36,13 +35,12 @@ const CartRight = () => {
                             <div className="checkout">Select this options at checkout.<span className="details">Details</span></div>
                         </div>
                     </div>
-                    <Subtotal /> 
-                    {/* <div className="total">SubTotal ({basket && basket.length} item{basket.length>1 ? "s" : ""}): <span className="price">$ 455.00</span></div> */}
+                    <Subtotal/> 
                     <form className="form">
                         <input type="checkbox" name="gift" onChange={changeChecked}></input>
                         <label htmlFor="gift">This order contains a gift.</label>
                     </form>
-                    <button className="buyButton">Proceed to Buy</button>
+                    <button className="buyButton" onClick={e => history.push('/Payment')}>Proceed to Buy</button>
                 </BuyCard>
             </Wrapper>
         </>

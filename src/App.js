@@ -1,6 +1,7 @@
 import { onAuthStateChanged } from "@firebase/auth";
 import React, { useEffect } from "react";
 import { BrowserRouter as Router,Switch,Route  } from 'react-router-dom';
+import Checkout from "./components/Checkout/Checkout";
 import Home from "./components/Home";
 import LogIn from "./components/LogIn/LogIn";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
@@ -37,6 +38,7 @@ const App=() => {
   return (
     <Router>
       <Switch>
+        <Route path="/Payment" component={Checkout}/>
         <Route path="/Shopping" component={ShoppingCart}/>
         <Route path="/LogIn" component={LogIn}/>
         <Route path="/SignIn" component={SignIn}/>

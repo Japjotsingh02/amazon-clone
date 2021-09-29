@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
     position:sticky;
     top:0;
     z-index:99999;
-
 `
 
 export const Content = styled.div`
@@ -16,6 +15,25 @@ export const Content = styled.div`
     justify-content:space-between;
     height:100%;
     gap:1.5%;
+    position:relative;
+
+    .sign-out-container{
+        position:absolute;
+        width:100vw;
+        top:60px;
+        left:0%;
+        height:100vw;
+        z-index:10;
+        background:rgba(0,0,0,.6) none repeat scroll 0 0;
+    }
+
+    // .triangle-image{
+        // position:absolute;
+        // top:-20%;
+        // color:#ffffff;
+        // left:50%;
+        // 
+    // }
 
     @media only screen and (max-width:1024px){
         gap:0;
@@ -90,6 +108,16 @@ export const NavBar = styled.div`
     justify-content:space-evenly;
     align-items:center;
     font-weight:700;
+    position:relative;
+
+    .triangle-image{
+        position:absolute;
+        top:-17%;
+        color:#ffffff;
+        right:15vw;
+        z-index:999999;
+        transform: scale(2.2);
+    }
 
     a{
         text-decoration:none;
@@ -99,12 +127,39 @@ export const NavBar = styled.div`
     .nav-flex{
         padding:7px 5px;
         border:1px solid #131921;
+        margin-right:4px;
         cursor:pointer;
+        font-size:0.89rem;
+        position:relative;
         
         &:hover{
             border:1px solid #ffffff;
             padding:7px 5px;
             border-radius:2px;
+        }
+        
+        .sign-out-popup{
+            background:#ffffff;
+            width:400px;
+            top:104%;
+            right:-130%;
+            z-index:9999999;
+            padding:25px 0px;
+            position:absolute;
+            border-radius:2px;
+
+            .triangle-image{
+                position:absolute;
+                top:-17%;
+                color:#ffffff;
+                right:15vw;
+                z-index:999999;
+                transform: scale(2.2);
+
+                @media only screen and (max-width:1024px){
+                    right:20vw;
+                }
+            }
         }
     }
 
@@ -121,6 +176,7 @@ export const NavBar = styled.div`
         padding:4px 9px;
         font-size:1rem;
         border:1px solid #131921;
+        margin-right:4px;
 
         &:hover{
             border:1px solid #ffffff;
@@ -135,7 +191,6 @@ export const NavBar = styled.div`
     }
     .shopping-cart-image{
         color:var(--white);
-        z-index:9999;
         font-size:2.5rem;
         height:40px
 
@@ -153,8 +208,22 @@ export const NavBar = styled.div`
         padding:0px 2.4px;
         border-radius:50%;
         background-color:#131921;
-        z-index:99999;
+        z-index:3;
         color:#f08804;
     }
 `;
 
+export const SignOutButton = styled.div`
+    background: linear-gradient(to bottom,#f7dfa5,#f0c14b);
+    border:1px solid;
+    text-align:center;
+    color:#0F1111;
+    border-color: #a88734 #9c7e31 #846a29;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 40%) inset;
+    border-radius:3px;
+    font-weight:500;
+    margin:0 auto;
+    padding:5px 0px;
+    width:50%;
+    cursor:pointer;
+`;

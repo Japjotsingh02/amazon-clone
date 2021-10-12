@@ -15,10 +15,10 @@ const LogIn = () => {
     const [formValid, setformValid] = useState(false);
     const [message, setmessage] = useState({email:"", password:""});
 
-    console.log(passwordError);
-    console.log(emailError);
-    console.log(message);
-    console.log(formValid);
+    // console.log(passwordError);
+    // console.log(emailError);
+    // console.log(message);
+    // console.log(formValid);
 
     const validateField = (fieldName,value) =>{
         let EmailError=emailError;
@@ -77,11 +77,10 @@ const LogIn = () => {
             displayName: name
         }).then(() => {
             const displayName = auth.currentUser.displayName;
-            console.log(displayName);
             // Profile updated!
             // ...
         }).catch((error) => { 
-            console.log(error);
+            alert(error);
             // An error occurred
             // ...    
         });
@@ -95,14 +94,14 @@ const LogIn = () => {
             <Form>
                 <h1>Create Account</h1>
                 <label className="label">Your Name</label>
-                <input type="text" name="name" className="input" value={name} onChange={(e) => setname(e.target.value,)}/>
+                <input type="text" name="name" className="input" value={name} onChange={(e) => setname(e.target.value)} required/>
                 <label className="label">Email or mobile phone number</label>
-                <input type="text" name="email" className="input" value={email} onChange={(e) => setemail(e.target.value)}/>
+                <input type="text" name="email" className="input" value={email} onChange={(e) => setemail(e.target.value)} required/>
                 <label className="label">Password</label>
-                <input type="password" name="password" className="input" value={password} onChange={(e) => setpassword(e.target.value)}/>
+                <input type="password" name="password" className="input" value={password} onChange={(e) => setpassword(e.target.value)} required/>
                 <label className="label">Confirm Password</label>
-                <input type="password" name="confirmPassword" className="input" value={confirmPassword} onChange={(e) => setconfirmPassword(e.target.value)}/>
-                <SubmitButton onClick={(e) => createAccount(e)}>Create your Amazon Account</SubmitButton>
+                <input type="password" name="confirmPassword" className="input" value={confirmPassword} onChange={(e) => setconfirmPassword(e.target.value)} required/>
+                <SubmitButton type="submit" onClick={(e) => createAccount(e)}>Create your Amazon Account</SubmitButton>
                 <div className="privacy">By creating an account and logging in, you agree to Amazon's Fake Clone <span>Conditions of use</span> and <span>Privacy Notice.</span></div>
                 <div className="already">Already have an account? <Link to={`/SignIn`}><span className="sign-in"> Sign In</span></Link>
                 </div>

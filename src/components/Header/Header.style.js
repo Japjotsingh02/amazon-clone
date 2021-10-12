@@ -22,7 +22,7 @@ export const Content = styled.div`
         width:100vw;
         top:60px;
         left:0%;
-        height:100vw;
+        height:calc(100vh - 60px);
         z-index:10;
         background:rgba(0,0,0,.6) none repeat scroll 0 0;
     }

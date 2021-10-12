@@ -37,6 +37,14 @@ export const Title= styled.div`
 export const Content=styled.div`
     .item{
         width:50%;
+
+        @media only screen and (max-width:1024px){
+            width:70%
+        }
+
+        @media only screen and (max-width:768px){
+            width:100%
+        }
     }
 
     .item-image{
@@ -51,13 +59,28 @@ export const Content=styled.div`
 `;
 
 export const Gift=styled.div`
-    
+    .gift-text{
+
+    }
 `;
 
 export const Shipping=styled.div`
     display:flex;
     flex-direction:column;
     width:50%;
+    margin-bottom:15px;
+
+    .form{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .total-card{
+        text-align:center;
+        padding:2% 5%;
+        border:1px solid var(--lightGrey);
+        margin-top:1%;
+    }
 
     .shipping-cart-icon{
         height:36px;
@@ -65,7 +88,7 @@ export const Shipping=styled.div`
 
     .label{
         font-size:1.1em;
-        margin-bottom:2px;
+        margin-bottom:4px;
         font-family: Arial,sans-serif;
         font-weight:600;
     }
@@ -80,6 +103,14 @@ export const Shipping=styled.div`
         box-shadow: 0 1px 0 rgb(255 255 255 / 50%), 0 1px 0 rgb(0 0 0 / 7%) inset;
         height: 2.5rem;
         padding: 0 0.7rem;
+        outline:0;
+    }
+
+    .input:focus ,.input:focus-visible{
+        border: 1px solid #e77600;
+        // box-shadow: 0 0 3px 2px rgb(228 121 17 / 50%);
+        box-shadow: 0 0 0 2px #f90, 0 0 0 3px rgb(255 153 0 / 50%);
+        border-radius: 4px;
     }
 
     .select{
@@ -87,7 +118,7 @@ export const Shipping=styled.div`
         border-radius: .4rem;
         color: #0F1111;
         background: #F0F2F2;
-        margin-bottom:8px;
+        margin-bottom:40px;
         box-shadow: 0 0.2rem 0.5rem 0 rgb(213 217 217 / 50%);
     }
 
@@ -101,5 +132,32 @@ export const Shipping=styled.div`
         background: #F0F2F2;
         box-shadow: 0 0.2rem 0.5rem 0 rgb(213 217 217 / 50%);
     }
+
+    .card-button, .card-details{
+        margin-bottom:10px;
+    }
+    .card-button{
+        margin-top:10px;
+        background: #FFD814;
+        border: 1px solid #FCD200;
+        padding:6px 1px;
+        box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+        border-radius:8px;
+        width:100%;
+        box-shadow:none;
+        color:#000000;
+    }
+    .total{
+        font-size:1.3rem;
+    }
+
+    @media only screen and (max-width:1024px){
+        width:70%;
+    }
+
+    @media only screen and (max-width:768px){
+        width:100%
+    }
+
 `;
 

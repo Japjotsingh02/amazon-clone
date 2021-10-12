@@ -45,7 +45,7 @@ export const LogoImg = styled.img`
     margin-bottom:18px;
 `;
 
-export const Form = styled.div`
+export const Form = styled.form`
     color:#111111;
     border-radius: 4px;
     margin-bottom:22px;

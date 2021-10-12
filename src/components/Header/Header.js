@@ -14,7 +14,6 @@ const Header=() =>{
     const [signOut, setSignOut] = useState(false);
 
     const Currentuser = auth.currentUser;
-    // console.log(Currentuser);
 
     if(user !==null){
         const displayName=user.displayName;
@@ -67,10 +66,12 @@ const Header=() =>{
                             : ""}
                         </div>
                     </Link>
-                    <div className="nav-flex">
-                        <div className="top-nav">Returns</div>
-                        <div>& orders</div>
-                    </div>
+                    <Link to={`/orders`}>   
+                        <div className="nav-flex">
+                            <div className="top-nav">Returns</div>
+                            <div>& orders</div>
+                        </div>
+                    </Link>
                     <div className="nav-flex">
                         <div className="top-nav">Your</div>
                         <div>Prime</div>

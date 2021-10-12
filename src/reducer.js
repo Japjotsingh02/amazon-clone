@@ -45,6 +45,11 @@ const reducer = (state , action) => {
                 ...state,
                 user:action.user,
             }
+        case "EMPTY_BASKET":
+            return{
+                ...state,
+                basket:[],
+            }
         // always return the complete updated set,
         // using spread operator will be helpful if you have
         // an object in state

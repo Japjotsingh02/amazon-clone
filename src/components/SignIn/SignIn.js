@@ -41,10 +41,10 @@ const SignIn = () => {
             <Form>
                 <h1>Sign-In</h1>
                 <label className="label">Email or mobile phone number</label>
-                <input type="text" name="email" className="input" value={email} onChange={(e) => setemail(e.target.value)}></input>
+                <input type="text" name="email" className="input" value={email} onChange={(e) => setemail(e.target.value)} required></input>
                 <label className="label">Password</label>
-                <input type="password" name="password" className="input" value={password} onChange={(e) => setpassword(e.target.value)}></input>
-                <SubmitButton onClick={(e) =>signIn(e)}>Sign In</SubmitButton>
+                <input type="password" name="password" className="input" value={password} onChange={(e) => setpassword(e.target.value)} required></input>
+                <SubmitButton type="submit" onClick={(e) =>signIn(e)}>Sign In</SubmitButton>
                 <div className="privacy">By continuing, you agree to Amazon's Fake Clone <span>Conditions of use</span> and <span>Privacy Notice.</span></div>
                 <div className="need-help">Need Help?</div>
             </Form>
@@ -56,6 +56,7 @@ const SignIn = () => {
             <Link to={`/LogIn`}>
                 <CreateAccount className="login-button">Create your Amazon Account</CreateAccount>
             </Link>
+            <div className="Mobile">Click on Desktop site to view the Amazon app !!!!!</div>
         </Wrapper>
     )
 };

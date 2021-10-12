@@ -5,9 +5,7 @@ import { Content, Wrapper, Title,Item,ItemImage,ItemDesc } from './CartLeft.styl
 
 const CartLeft=() => {
     const [{basket,OrderChecked},dispatch]=useStateValue();
-    console.log(OrderChecked);
     const [checked,setChecked]=useState(false);
-    console.log(checked);
     
     useEffect(() => {
         OrderChecked ? setChecked(true) : setChecked(false);

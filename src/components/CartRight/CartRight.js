@@ -18,7 +18,6 @@ const CartRight = () => {
 
     // const [checked , setChecked] = useState(false);
     // console.log(checked);
-
     // const changeChecked = () =>{
         // setChecked(!checked);
     // }
@@ -37,7 +36,7 @@ const CartRight = () => {
                     </div>
                     <Subtotal/> 
                     <form className="form">
-                        <input type="checkbox" name="gift" onChange={changeChecked}></input>
+                        <input type="checkbox" name="gift" onChange={changeChecked} checked={OrderChecked}></input>
                         <label htmlFor="gift">This order contains a gift.</label>
                     </form>
                     <button className="buyButton" onClick={e => history.push('/Payment')}>Proceed to Buy</button>

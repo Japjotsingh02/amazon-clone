@@ -10,6 +10,11 @@ export const Wrapper = styled.div`
     margin:1%;
     padding:1%;
     max-height:450px;
+
+    @media only screen and (min-width:1700px){
+        max-height:none;
+    }
+
 `;
 
 export const ProductInfo = styled.div`

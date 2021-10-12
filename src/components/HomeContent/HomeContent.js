@@ -32,6 +32,11 @@ const HomeContent = () => {
                     <Product id="08954478" desc="The Lean Startup: How Constant Innovation Creates Radically Successful Businesse" price={11.96} rating ={3} Imagesrc="https://images-na.ssl-images-amazon.com/images/I/51aEhyjQGrL._SX316_BO1,204,203,200_.jpg"/>
                 </ProductList>
 
+                <ProductList>
+                    <Product id="40950942" desc="2020 Apple iPad Air (10.9-inch, Wi-Fi, 64GB) - Gold (4th Generation)" price={539.00} rating ={5} Imagesrc="https://m.media-amazon.com/images/I/713KzEU5RCL._AC_SX466_.jpg"/>
+                    <Product id="835092345" desc="Echo Dot (4th Gen) | Smart speaker with clock and Alexa | Glacier White" price={59.99} rating ={4} Imagesrc="https://m.media-amazon.com/images/I/612KpcXcFBL._AC_SY355_.jpg"/>
+                </ProductList>
+
             </Content>
         </Wrapper>
     );

@@ -23,6 +23,16 @@ export const GlobalStyle = createGlobalStyle`
     font-size:1.111vw;
   }
 
+  .Mobile{
+    display:none;
+  }
+
+  @media only screen and (min-width:2200px){
+    html{
+      font-size:0.85vw;
+    }
+  }
+
   @media only screen and (max-width:1024px){
     html{
       font-size:1.6vw;
@@ -31,7 +41,7 @@ export const GlobalStyle = createGlobalStyle`
 
   @media only screen and (max-width:768px){
     html{
-      font-size:2vw;
+      font-size:1.8vw;
     }
   }
 
@@ -41,9 +51,9 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  @media only screen and (max-width:615px){
-    html{
-      display:none;
+  @media only screen and (max-width:650px){
+    .Mobile{
+      display:block;
     }
   }
 

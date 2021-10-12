@@ -37,7 +37,11 @@ export const Item= styled.div`
 export const ItemImage= styled.img`
     width:130px;
     margin-left:5%;
-    object-fit:cover;
+    object-fit:contain;
+
+    @media only screen and (max-width:704px){
+        width:100px;
+    }
 `
 
 export const ItemDesc= styled.div`
@@ -66,7 +70,7 @@ export const ItemDesc= styled.div`
         box-shadow: 0 2px 5px rgb(15 17 17 / 15%);
         border-color:#D5d5d9;
         border-radius:8px;
-        margin-right:15px;
+        margin-right:1rem;
     }
 
     .shipping{
@@ -86,6 +90,7 @@ export const ItemDesc= styled.div`
         color: #0F1111;
         box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
         padding:6px;
+        font-size:1rem;
         cursor:pointer;
         text-align:center;
     }

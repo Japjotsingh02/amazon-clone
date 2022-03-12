@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Amzon clone
+# Amazon clone
 
 This is the amazon clone built with react and firebase. You have to make your account first and then add items to the cart and buy the items from the checkout page and see your orders on the orders page. If you have your account you can sign in on signin page and go to amazon homepage.
 

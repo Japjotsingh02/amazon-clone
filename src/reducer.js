@@ -10,7 +10,6 @@ export const getBasketTotal=(basket) =>basket.reduce((amount,item)=> {
     } ,0);
 
 const reducer = (state , action) => {
-    // console.log(action);
     switch(action && action.type){
         case 'ADD_TO_BASKET':
             return {
@@ -21,7 +20,6 @@ const reducer = (state , action) => {
                 const index = state.basket.findIndex(item => {
                     return item.id === action.id;
                 });
-                console.log(index);
                 let newBasket= [...state.basket];
                 index>=0 ? newBasket.splice(index,1) : console.warn("WARNING");
             return {
@@ -29,13 +27,11 @@ const reducer = (state , action) => {
                 basket:newBasket,
             };
         case "ORDER_CHECKED":
-            // console.log(state.OrderChecked);
             return{
                 ...state,
                 OrderChecked:action.Checked,
             };
         case "ITEM_CHECKED":
-            // console.log(action.ItemsChecked);
             return{
                 ...state,
                 ItemChecked:action.ItemsChecked,

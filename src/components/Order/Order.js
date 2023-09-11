@@ -5,7 +5,6 @@ import { Wrapper } from './Order.style';
 import CurrencyFormat from 'react-currency-format';
 
 const Order = ({order}) => {
-    console.log(moment.unix(order.data && order.data.created).format('MMMM Do YYYY, h:mm:ss a'));
     return (
         <Wrapper>
             <div className="order-flex">

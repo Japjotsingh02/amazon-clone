@@ -7,7 +7,6 @@ import { Container, Content, Gift, Shipping, Title, Wrapper } from './Payment.st
 import { ItemDesc, ItemImage, Item} from '../CartLeft/CartLeft.style';
 import { AddButton } from '../Product/Product.style';
 import { useElements, useStripe , CardElement } from '@stripe/react-stripe-js';
-import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from '../../reducer';
 import Subtotal from '../Subtotal/Subtotal';
 import axios from '../../axios';
@@ -95,12 +94,11 @@ const Payment= () => {
             history.replace(`/orders`);
 
         })
-        .catch(error => console.log(error));
+        .catch(error => alert(error));
     };
 
     const handleChange = (e) => {
         // Listen for changes and display the errors if any 
-        // console.log(e.empty);
 
         setDisabled(e.empty);
         setError(e.error ? e.error.message : "");

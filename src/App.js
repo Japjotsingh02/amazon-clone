@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router,Switch,Route  } from 'react-router-dom';
 import Checkout from "./components/Checkout";
 import Home from "./components/Home";
-import LogIn from "./components/LogIn/LogIn";
 import Orders from "./components/Orders";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart";
 import SignIn from "./components/SignIn/SignIn";
@@ -11,6 +10,7 @@ import { auth } from "./firebase";
 import { GlobalStyle } from "./GlobalStyle";
 import Mobile from "./components/MobileComponent/Mobile";
 import { useStateValue } from "./StateProvider";
+import SignUp from "./components/SignUp/SignUp";
 
 const App=() => {
   
@@ -60,14 +60,14 @@ const App=() => {
         {mobile 
         ? <Mobile/> 
         :
-        <Switch>
-        <Route path="/orders" component={Orders}/>
-        <Route path="/Payment" component={Checkout}/>
-        <Route path="/Shopping" component={ShoppingCart}/>
-        <Route path="/LogIn" component={LogIn}/>
-        <Route path="/SignIn" component={SignIn}/>
-        <Route path="/" component={Home}/>
-        </Switch>
+          <Switch>
+            <Route path="/orders" component={Orders}/>
+            <Route path="/Payment" component={Checkout}/>
+            <Route path="/Shopping" component={ShoppingCart}/>
+            <Route path="/SignUp" component={SignUp}/>
+            <Route path="/SignIn" component={SignIn}/>
+            <Route path="/" component={Home}/>
+          </Switch>
         }
       <GlobalStyle />
     </Router>  

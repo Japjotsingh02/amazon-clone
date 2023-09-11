@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
         justify-content:space-between;
     }
 
-    .left-bar{
+    .left-bar,.addressCard{
         margin-left:5%;
     }
 

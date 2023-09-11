@@ -5,7 +5,6 @@ import { signInWithEmailAndPassword } from '@firebase/auth';
 import { auth } from '../../firebase';
 
 const SignIn = () => {
-
     const history = useHistory();
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
@@ -13,20 +12,15 @@ const SignIn = () => {
     const [passwordError, setpasswordError] = useState(false);
     const [formValid, setformValid] = useState(false);
 
-    console.log(password);
-    console.log(email);
-
     const signIn= (e) =>{
         e.preventDefault();
-        console.log(e.target);
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 history.push('/');
             })
-            .catch((error) => console.log(error.message))
+            .catch((error) => alert(error.message))
     };
-
 
     const validateForm= () => {
         setformValid(emailError && passwordError);
@@ -53,7 +47,7 @@ const SignIn = () => {
                 <div className="newCostumer">New to Amazon?</div>
                 <hr className="right-line"/>
             </div>
-            <Link to={`/LogIn`}>
+            <Link to={`/SignUp`}>
                 <CreateAccount className="login-button">Create your Amazon Account</CreateAccount>
             </Link>
             <div className="Mobile">Click on Desktop site to view the Amazon app !!!!!</div>

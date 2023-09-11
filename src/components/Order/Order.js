@@ -12,8 +12,6 @@ const Order = ({order}) => {
                 <div className="left-bar">
                     <h2 className="orderTitle">Order</h2>
                     <p className="orderCreated">{moment.unix(order.data && order.data.created).format('MMMM Do YYYY, h:mm:ss a')}</p>
-                    <h3 className="addressTitle">Address</h3>
-                    <p className="address">{order.data.type="" ? "home" : order.data.type} : {order.data.address},{order.data.country}</p>
                 </div>
 
                 <div className="right-bar">
@@ -21,9 +19,15 @@ const Order = ({order}) => {
                         <small className="orderId">{order.id}</small>
                     </p>
                 </div>
-            </div>    
+            </div>
+
+            <div className='addressCard'>
+                <h3 className="addressTitle">Address</h3>
+                <p className="address">{order.data.type="" ? "home" : order.data.type} : {order.data.address},{order.data.country}</p>
+            </div>
+            
             {order.data && order.data.basket?.map( item =>{
-                const index = order.data.basket ?.indexOf(item);
+                const index = order.data.basket?.indexOf(item);
 
                 return(
                     <Item key={index} className="item">

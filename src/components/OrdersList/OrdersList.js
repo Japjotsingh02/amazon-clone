@@ -1,4 +1,4 @@
-import { collection, doc, onSnapshot, orderBy, query } from '@firebase/firestore';
+import { collection, onSnapshot, orderBy, query } from '@firebase/firestore';
 import React, { useEffect, useState } from 'react'
 import { db } from '../../firebase';
 import { useStateValue } from '../../StateProvider';
@@ -18,21 +18,15 @@ const OrdersList = () => {
                         id:doc.id,
                         data:doc.data(),
                     })));
-                // console.log("Current Orders:", orders);
                 });
             }
             catch(error) {
-                console.log(error);
+                alert(error);
             }
         }
         else{
             setOrders([]);
         }
-
-        // onSnapshot(doc(db, "users",user && user.uid, "orders"), (doc) => {
-            // console.log("Current data: ", doc.data());
-
-        // });
     }, [user]);
 
     return (

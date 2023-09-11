@@ -23,7 +23,7 @@ const reducer = (state , action) => {
                 });
                 console.log(index);
                 let newBasket= [...state.basket];
-                index>=0 ? newBasket.splice(index,1) : console.warn("CHAL BHOSDIKE MUJHE NA PATA");
+                index>=0 ? newBasket.splice(index,1) : console.warn("WARNING");
             return {
                 ...state , 
                 basket:newBasket,

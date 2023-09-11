@@ -13,7 +13,7 @@ import Subtotal from '../Subtotal/Subtotal';
 import axios from '../../axios';
 import { useHistory } from 'react-router';
 import { db } from '../../firebase';
-import { collection, doc, setDoc } from '@firebase/firestore';
+import { doc, setDoc } from '@firebase/firestore';
 
 const Payment= () => {
     const [{basket,OrderChecked,user},dispatch]=useStateValue();
